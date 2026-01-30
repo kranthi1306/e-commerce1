@@ -4,6 +4,7 @@ import Register from "./assets/components/Register.jsx";
 import Login from "./assets/components/Login.jsx";
 import Navigation from "./assets/components/Navigation.jsx";
 import AddProduct from "./assets/components/AddProduct.jsx";
+import Cart from './assets/components/Cart.jsx'
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/add-product" element={<AddProduct/>}/>
-
+        <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
   )
