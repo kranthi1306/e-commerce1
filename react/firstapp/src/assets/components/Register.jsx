@@ -23,11 +23,21 @@ console.log(import.meta.env.VITE_API_BACKEND)
         console.log(res.data)
         if(res.data.status===201){
           alert("register successful")
+          Swal.fire({
+  title: "Good job!",
+  text: "Registration successful",
+  icon: "success"
+          });
           navigate("/login")
         }
       })
       .catch((err)=>{
         alert("got the error while registering open console and check the response data")
+        Swal.fire({
+  title: "Error!",
+  text: "Registration failed",
+  icon: "error"
+        });
       })
 
     setName("")

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2' 
 
 export default function Cart() {
   const [cart, setCart] = useState({ items: [] })
@@ -11,7 +12,12 @@ export default function Cart() {
 
   useEffect(() => {
     if (!userId) {
-      alert("Please login first")
+      
+      Swal.fire({
+        title: "Good job!",
+        text: "please login first",
+        icon:"Error"
+      });
       navigate("/login")
       return
     }

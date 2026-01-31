@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import "./Login.css"
+import Swal from "sweetalert2"
 
 export default function Login() {
   const [email, setEmail] = useState("")
@@ -24,7 +25,12 @@ export default function Login() {
         navigate("/")
       }
     } catch (err) {
-      alert(err.response?.data?.message || "Login failed")
+      
+      Swal.fire({
+  title: "Error!",
+  text:  "Login failed",
+  icon: "error"
+      });
     }
   }
 
